@@ -37,7 +37,7 @@
 
 ## 📫 联系方式
 
-- [个人邮箱](K-Black@k-black.top)
+- [个人邮箱](mailto:k-black@k-black.top)
 
 ---
 
