@@ -85,7 +85,7 @@ keep following it.
 
 **oxygen-linux** — 📱 *local repo, not published yet*
 
-Mainline Linux on a Xiaomi Mi 6X (msm8953). Started as a weekend experiment; it boots.
+Mainline Linux on a Xiaomi Mi Max2 (msm8953). Started as a weekend experiment; it boots.
 
 *Works now:* kernel 7.3 with a 263-file msm8953 patch set forward-ported, KWin on Wayland, the
 1080p DSI panel, ft5x06 touch, Wi-Fi on 5 GHz, Bluetooth, USB gadget networking and serial, and
