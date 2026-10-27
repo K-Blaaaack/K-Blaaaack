@@ -22,27 +22,27 @@ and keep a homelab running. Lately most of that involves AI agents.
 
 ### 👨‍💻 About Me
 
-Most of what I build starts as a problem on my own machine. A car I wanted to read data from,
-a game that refused to run at the refresh rate I paid for, a phone sitting in a drawer with a kernel
-that hadn't been updated since 2019. So the repos here tend to be tools I actually open.
+Most of what I build starts as a problem on my own machine. A game that refused to run at the
+refresh rate I paid for. A phone sitting in a drawer with a kernel nobody had touched since 2019.
+So the repos here are tools I open, not demos I parked.
 
 The work lands in four places, unevenly. **Apps** first, because that's what people touch.
-**Kernels and drivers** second, because mine kept not having drivers. **Homelab infrastructure**
-third, because nobody else was going to run it. AI agents are the newest corner and the one I'd
-rather show than explain.
+**Kernels and drivers** next, because mine kept not having drivers. **Homelab** after that, since
+nobody else was going to run it. AI agents are the newest corner and the one I'd rather show than
+explain.
 
 - 🐧 Daily driver: Arch Linux on Wayland, running a kernel I built
 - 📱 Android: mainline kernel ports, device trees, touch and panel drivers, Magisk modules
 - 🖥️ Homelab: Proxmox VE, KVM/QEMU, PXE installs, a NAS, 10GbE between boxes
 - 🤖 AI: local inference, agent harnesses (OpenCode, DSH), one AstrBot plugin
-- 🔧 Most of these repos exist because I needed them. They're not portfolio pieces
+- 🔧 Most of these repos exist because I needed them. That's the whole reason
 
 ---
 
 ### 🚀 Selected work
 
-Four things worth looking at. Each one says what runs today, what's half done, and what I haven't
-started, because "in progress" means nothing on its own.
+Four repos I'd point at first. Each card says what runs today, what's half done, and what I
+haven't started. "In progress" on its own tells you nothing.
 
 <table>
 <tr><td width="50%">
@@ -56,9 +56,9 @@ sidecar turns it into JSON-RPC, and an Electron window draws it.
 import/export, DTC read/clear, VIN, zh/en, dark and light, and a drive simulator so you can develop
 without a car. Current build is `0.1.9-rc.3`, desktop first.
 
-*Still open:* nobody has left it plugged into a real car for six hours yet. PID refresh rate is
-capped by whatever the adapter can push, not by the app. The Android build shares the renderer but
-lags the desktop one.
+*Still open:* it hasn't spent six hours plugged into a real car yet. PID refresh rate is capped
+by whatever the adapter can push, not by the app. The Android build shares the renderer and lags
+the desktop one.
 
 `Electron` `Vue 3` `TypeScript` `Python sidecar` `SQLite`
 
@@ -120,24 +120,25 @@ pinned in `SOURCES.md`. The T480 and one other machine boot these daily.
 
 ### 🧠 MAGI Decision System — *local, runs as a DSH plugin*
 
-Borrowed straight from *Evangelion*, then turned into something duller and more useful: a gate in
-front of risky tool calls. Three reviewers look at the same proposal separately, with **different
-information slices** rather than different personalities. All three have to approve, and approval
-produces a single-use ticket bound to one effect set, valid 60 seconds.
+Borrowed from *Evangelion*, then made boring on purpose. It's a gate in front of risky tool
+calls. Three reviewers see the same proposal separately, with **different information slices**
+rather than different personalities. All three have to approve, and approval produces a single-use
+ticket bound to one effect set, good for 60 seconds.
 
 *Works now:* pre-execute hook in the tool pipeline (not a prompt, so it can't be talked around),
 risk tiering, parallel review, arbitration, monotonic guard on the effect set, JSONL audit log with
 sensitive fields redacted, plus tests and two written reports.
 
-*Honest limitation:* all three reviewers run on the same model by default. Information slicing
-lowers correlation, it doesn't remove it. Real independence needs a different model or a rule
-engine behind BALTHASAR, and that's a config option right now, not a finished feature.
+*The catch:* all three reviewers run on the same model by default. Slicing the information
+lowers correlation; it doesn't remove it. Real independence needs a different model or a rule engine
+behind BALTHASAR. That's a config option today, not a finished feature.
 
 ---
 
 ### 🔧 Workshop
 
-Smaller things, forks, and one-off fixes. Fork status is marked so you know what I actually wrote.
+Smaller things, forks, one-off fixes. Forks are marked, so you can tell what I wrote and what I
+only rebuilt.
 
 | Project | What it is |
 | --- | --- |
@@ -157,8 +158,8 @@ Smaller things, forks, and one-off fixes. Fork status is marked so you know what
 
 ### 🛠️ Stack, sorted by how often I actually touch it
 
-No proficiency percentages. Tiers are about frequency and depth, and the last row is things I read
-about more than I write.
+No proficiency bars. Sorted by how often I reach for a thing, not by how good it sounds in a
+list.
 
 | Tier | What's in it |
 | --- | --- |
@@ -177,9 +178,10 @@ about more than I write.
 
 ### ✍️ Writing
 
-I write up the messy parts on [k-black.top](https://k-black.top), source in
-[articles](https://github.com/K-Blaaaack/articles). Mostly build logs: the msm8953 kernel port,
-custom CachyOS kernels, the R730 fan curve, the Hyps Hub design, this site's own rebuilds.
+Build logs go on [k-black.top](https://k-black.top), source in
+[articles](https://github.com/K-Blaaaack/articles). The msm8953 port, custom CachyOS kernels, the
+R730 fan curve, Hyps Hub's design decisions, and two rewrites of this site that I'd do differently
+now.
 
 ---
 
@@ -201,10 +203,10 @@ custom CachyOS kernels, the R730 fan curve, the Hyps Hub design, this site's own
 
 ### 🐧 Currently Wrenching On
 
-- Getting the amp driver and battery gauge working on the Mi 6X port, so it stops being a phone that only browses
-- Checking whether three reviewers disagreeing ever beats one reviewer deciding, and logging what happens when they do
-- Making command-line tools usable without a terminal, without making them slower
-- Rebuilding the homelab around PXE, so reinstalling a box stops being an afternoon
+- Amp driver and battery gauge on the Mi 6X port. Right now it's a phone that only browses
+- Whether three reviewers disagreeing ever beats one deciding. Logging every case either way
+- Making CLI tools usable without a terminal, and without slowing them down
+- Moving the homelab to PXE so reinstalling a box stops eating an afternoon
 
 ---
 
