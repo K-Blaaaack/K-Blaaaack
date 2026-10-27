@@ -120,9 +120,6 @@ custom build pipeline, dark/light themes, i18n.
   <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=K-Blaaaack&theme=github-dark-blue&hide_border=true&background=0D1117&ring=1F6FEB&fire=58A6FF&currStreakLabel=58A6FF" />
   <br/>
   <img width="370" src="https://github-readme-stats.vercel.app/api/top-langs/?username=K-Blaaaack&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8" />
-  <img width="370" src="https://github-profile-trophy.vercel.app/?username=K-Blaaaack&theme=github_dark&no-frame=true&no-bg=true&column=7&margin-w=4&margin-h=4" />
-  <br/><br/>
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=K-Blaaaack&bg_color=0d1117&color=c9d1d9&line=1f6feb&point=58a6ff&area=true&hide_border=true&theme=github-dark" />
   <br/><br/>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/K-Blaaaack/K-Blaaaack/output/github-contribution-grid-snake-dark.svg" />
