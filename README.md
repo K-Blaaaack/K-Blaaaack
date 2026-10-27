@@ -4,8 +4,8 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=20&duration=2800&pause=800&color=58A6FF&center=true&vCenter=true&width=720&lines=Hi%2C+I%27m+K-Black+%F0%9F%91%8B;%24+whoami;%E2%86%92+cross-platform+app+developer+%7C+kernel+tinkerer;%E2%86%92+homelab+architect+%7C+AI+agent+builder;%E2%86%92+%22Understand+the+system.+Build+useful+tools.%22)](https://git.io/typing-svg)
 
-**Linux & Open Source Developer** — building cross-platform apps, porting mainline kernels,
-and wiring self-hosted infrastructure together with AI agents.
+**Linux & Open Source Developer.** I write cross-platform apps, port mainline kernels onto phones,
+and keep a homelab running. Lately most of that involves AI agents.
 
 [![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=white)](https://archlinux.org)
 [![Wayland](https://img.shields.io/badge/Wayland-4A90D9?logo=wayland&logoColor=white)](https://wayland.freedesktop.org)
@@ -23,15 +23,20 @@ and wiring self-hosted infrastructure together with AI agents.
 
 ### 👨‍💻 About Me
 
-I build software I actually use — from a vehicle telemetry app to a Linux game-performance CLI.
-My work spans **application development, kernel-level tinkering, and homelab infrastructure**,
-with a growing focus on **AI agents and multi-agent decision systems**.
+Most of what I build starts as a problem on my own machine. A car I wanted to read data from,
+a game that refused to run at the refresh rate I paid for, a server I wanted to reinstall without
+walking to the basement. So the projects here tend to be tools I actually open.
 
-- 🐧 Daily driver: Arch Linux + Wayland (`niri`) — kernel compiled by myself
-- 📱 Android modding: mainline kernel ports, device trees, touch/display drivers, Magisk
-- 🖥️ Homelab: Proxmox VE, KVM/QEMU, PXE provisioning, NAS, 10GbE, soft-routing
-- 🤖 AI: local LLM inference, OpenCode/DSH agents, AstrBot plugins
-- 🔧 Many projects exist because I needed them, not because they looked good on a résumé
+The work lands in three places, unevenly. **Apps** first, because that's what people touch.
+**Kernels and drivers** next, because mine keep not having drivers. **Infrastructure** last, because
+nobody else was going to run it. AI agents are the newest corner and the one I'd rather show than
+explain.
+
+- 🐧 Daily driver: Arch Linux on Wayland (`niri`), running a kernel I built
+- 📱 Android: mainline kernel ports, device trees, touch and display drivers, Magisk
+- 🖥️ Homelab: Proxmox VE, KVM/QEMU, PXE installs, a NAS, 10GbE between boxes, some soft routing
+- 🤖 AI: local inference, agent harnesses like OpenCode and DSH, a couple of AstrBot plugins
+- 🔧 Several repos here exist only because I needed them. None of them are portfolio pieces
 
 ---
 
@@ -42,8 +47,7 @@ with a growing focus on **AI agents and multi-agent decision systems**.
 
 **[OpenRoadScope](https://github.com/K-Blaaaack/open-road-scope)** — 🚗 *active development*
 
-Open-source cross-platform vehicle telemetry & diagnostics.
-OBD-II integration, real-time data visualization, trip logging.
+Reads OBD-II from the car, draws the numbers live, logs the trips.
 
 `Electron` `Vue 3` `TypeScript` `PixiJS` `Rust/NAPI-RS` `SQLite`
 
@@ -51,8 +55,7 @@ OBD-II integration, real-time data visualization, trip logging.
 
 **[SPlayer-Next](https://github.com/K-Blaaaack/SPlayer-Next)** — 🎵 *public project*
 
-Open-source music player focused on the Linux desktop
-experience and extensible multi-source ecosystems.
+A music player I wanted on Linux, with more than one place to pull tracks from.
 
 `Vue` `Electron` `TypeScript`
 
@@ -61,9 +64,9 @@ experience and extensible multi-source ecosystems.
 
 **[Hyps](https://github.com/MoYingJi/Hyps) / Hyps Hub** — 🎮 *daily driver*
 
-CLI for unlocking game frame-rate limits on Linux (Genshin, ZZZ…),
-plus **Hyps Hub**, a Qt6/QML desktop client with a dedicated adapter layer —
-CLI and GUI decoupled by design.
+A CLI that lifts frame-rate caps in games on Linux (Genshin, ZZZ). **Hyps Hub** is the GUI I wrote
+around it later, in Qt6/QML. It talks to the CLI through an adapter layer so the two can move
+independently, which has already saved me from rewriting things twice.
 
 `C` `Bash` `Qt6/QML`
 
@@ -71,8 +74,7 @@ CLI and GUI decoupled by design.
 
 **[KBkernel-cachy](https://github.com/K-Blaaaack/KBkernel-cachy)** — 🧬 *system*
 
-Custom CachyOS-based kernel builds for my machines
-(ThinkPad T480 and more), with per-device tuning.
+CachyOS-based kernels I build for my own laptops, tuned per machine. The T480 gets most of the attention.
 
 `Linux Kernel` `GCC` `Pacman/AUR`
 
@@ -81,9 +83,9 @@ Custom CachyOS-based kernel builds for my machines
 
 **MAGI Decision System** — 🤖 *experimental*
 
-Multi-agent decision pipeline inspired by *Neon Genesis Evangelion*:
-three independent perspectives deliberate in parallel; unanimous approval
-required, rejection triggers compromise generation and another round.
+Stolen straight from *Evangelion*. Three agents look at a proposal separately and in parallel.
+All three have to agree. If one refuses, the system is supposed to draft a compromise and send it
+back around. Whether that actually converges is the open question I'm still poking at.
 
 `Python` `LLM agents`
 
@@ -91,8 +93,8 @@ required, rejection triggers compromise generation and another round.
 
 **[articles](https://github.com/K-Blaaaack/articles) + [my-homepage](https://github.com/K-Blaaaack/my-homepage)** — 📝 *live*
 
-My personal site [k-black.top](https://k-black.top) and its content repo —
-custom build pipeline, dark/light themes, i18n.
+[k-black.top](https://k-black.top) and the content behind it. Own build pipeline, light and dark
+themes, English and Chinese.
 
 `Node.js` `Vite` `CI`
 
@@ -100,16 +102,16 @@ custom build pipeline, dark/light themes, i18n.
 </table>
 
 <details>
-<summary><b>🧰 Workshop shelf — smaller experiments</b></summary>
+<summary><b>🧰 Workshop shelf (smaller stuff)</b></summary>
 <br/>
 
 | Project | What it does |
 | --- | --- |
-| [oxygen-linux] | Mainline Linux bring-up for an msm8953 Android handset — kernel 7.x, device tree, touch & display drivers |
-| local_pxe_system | Dockerized PXE provisioning for the homelab — `pxe up` and machines install themselves |
-| astrbot_plugin_announcement | AstrBot plugin with a full web management dashboard (i18n, theme-aware, agent-built) |
-| Monster-Siren downloader | Music library tooling for Arknights fans |
-| bili tooling | Bilibili content & workflow automation |
+| [oxygen-linux] | Getting mainline Linux to boot on an msm8953 phone. Kernel 7.x, device tree, touch and panel drivers |
+| local_pxe_system | PXE in Docker. `pxe up`, then a machine installs itself |
+| astrbot_plugin_announcement | AstrBot plugin with a web dashboard for managing announcements. I wrote it in one evening with agents |
+| Monster-Siren downloader | Pulls the Arknights soundtrack down locally |
+| bili tooling | Small scripts that automate bits of Bilibili |
 
 </details>
 
@@ -146,7 +148,7 @@ custom build pipeline, dark/light themes, i18n.
 <tr><th>Domain</th><th>Tooling</th></tr>
 <tr><td><b>🐧 Systems</b></td><td>Arch Linux · Linux Kernel · Wayland / <code>niri</code> · systemd / udev · Android · Device Tree · Magisk · Wine / Proton / Waydroid</td></tr>
 <tr><td><b>🌐 Infra</b></td><td>Proxmox VE · KVM/QEMU · Docker · PXE · OpenWrt · iKuai · OpenVPN · NAS · 10/40GbE fabric</td></tr>
-<tr><td><b>🤖 AI</b></td><td>Local LLM inference · OpenCode / DSH agent harnesses · AstrBot · multi-agent orchestration · workflow automation</td></tr>
+<tr><td><b>🤖 AI</b></td><td>Local LLM inference · OpenCode / DSH agent harnesses · AstrBot · multi-agent orchestration</td></tr>
 </table>
 
 <br/>
@@ -192,10 +194,10 @@ Multi-agent systems
 
 ## 🐧 Currently Wrenching On
 
-- Porting **mainline Linux** onto Android hardware (oxygen-linux) — display & touch bring-up
-- Rethinking **multi-agent decision pipelines** (MAGI) — parallel deliberation, risk review, compromise rounds
-- Shrinking the gap between **CLI power and GUI comfort** on the Linux desktop
-- Feeding the homelab: PXE, high-speed switching, and one dashboard to rule them all
+- Getting the display and touch panel alive on an old Snapdragon 625 phone (oxygen-linux). Neither works yet
+- Figuring out whether three agents disagreeing can ever produce a better answer than one agent deciding (MAGI)
+- Making command-line tools usable without a terminal, without making them slower
+- Rebuilding the homelab around PXE, so reinstalling a box stops being an afternoon
 
 ---
 
@@ -214,7 +216,7 @@ anime & 二次元 · performance tuning · hardware DIY
 
 > **Understand the system. Build useful tools. Keep experimenting.**
 
-*Learning by building, documenting what breaks, shipping what works.*
+*Half of what I know came from breaking something in a VM and putting it back.*
 
 <br/>
 
@@ -225,7 +227,7 @@ anime & 二次元 · performance tuning · hardware DIY
 
 <br/>
 
-*Powered by Linux, curiosity, and an unreasonable number of terminal sessions.*
+*This page is maintained by hand. The snake is the only thing on a schedule.*
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:58a6ff,50:1f6feb,100:0d1117&height=120&section=footer" width="100%" />
 
