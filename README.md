@@ -10,10 +10,9 @@ and keep a homelab running. Lately most of that involves AI agents.
 [![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=white)](https://archlinux.org)
 [![Wayland](https://img.shields.io/badge/Wayland-4A90D9?logo=wayland&logoColor=white)](https://wayland.freedesktop.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![Vue](https://img.shields.io/badge/Vue%203-4FC08D?logo=vuedotjs&logoColor=white)](https://vuejs.org)
-[![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)](https://rust-lang.org)
+[![C++](https://img.shields.io/badge/C%2B%2B%20%2F%20Qt-00599C?logo=cplusplus&logoColor=white)](https://qt.io)
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://python.org)
-[![Qt](https://img.shields.io/badge/Qt%2FQML-41CD52?logo=qt&logoColor=white)](https://qt.io)
+[![Linux Kernel](https://img.shields.io/badge/Linux%20Kernel-fcc624?logo=linux&logoColor=black)](https://kernel.org)
 [![Proxmox](https://img.shields.io/badge/Proxmox%20VE-E57000?logo=proxmox&logoColor=white)](https://proxmox.com)
 [![Website](https://img.shields.io/badge/k--black.top-my_site-2ea44f)](https://k-black.top)
 
@@ -24,100 +23,167 @@ and keep a homelab running. Lately most of that involves AI agents.
 ### 👨‍💻 About Me
 
 Most of what I build starts as a problem on my own machine. A car I wanted to read data from,
-a game that refused to run at the refresh rate I paid for, a server I wanted to reinstall without
-walking to the basement. So the projects here tend to be tools I actually open.
+a game that refused to run at the refresh rate I paid for, a phone sitting in a drawer with a kernel
+that hadn't been updated since 2019. So the repos here tend to be tools I actually open.
 
-The work lands in three places, unevenly. **Apps** first, because that's what people touch.
-**Kernels and drivers** next, because mine keep not having drivers. **Infrastructure** last, because
-nobody else was going to run it. AI agents are the newest corner and the one I'd rather show than
-explain.
+The work lands in four places, unevenly. **Apps** first, because that's what people touch.
+**Kernels and drivers** second, because mine kept not having drivers. **Homelab infrastructure**
+third, because nobody else was going to run it. AI agents are the newest corner and the one I'd
+rather show than explain.
 
-- 🐧 Daily driver: Arch Linux on Wayland (`niri`), running a kernel I built
-- 📱 Android: mainline kernel ports, device trees, touch and display drivers, Magisk
-- 🖥️ Homelab: Proxmox VE, KVM/QEMU, PXE installs, a NAS, 10GbE between boxes, some soft routing
-- 🤖 AI: local inference, agent harnesses like OpenCode and DSH, a couple of AstrBot plugins
-- 🔧 Several repos here exist only because I needed them. None of them are portfolio pieces
+- 🐧 Daily driver: Arch Linux on Wayland, running a kernel I built
+- 📱 Android: mainline kernel ports, device trees, touch and panel drivers, Magisk modules
+- 🖥️ Homelab: Proxmox VE, KVM/QEMU, PXE installs, a NAS, 10GbE between boxes
+- 🤖 AI: local inference, agent harnesses (OpenCode, DSH), one AstrBot plugin
+- 🔧 Most of these repos exist because I needed them. They're not portfolio pieces
 
 ---
 
-### 🚀 Projects
+### 🚀 Selected work
+
+Four things worth looking at. Each one says what runs today, what's half done, and what I haven't
+started, because "in progress" means nothing on its own.
 
 <table>
-<tr><td width="60%">
+<tr><td width="50%">
 
-**[OpenRoadScope](https://github.com/K-Blaaaack/open-road-scope)** — 🚗 *active development*
+**OpenRoadScope** — 🚗 [source](https://github.com/K-Blaaaack/open-road-scope)
 
-Reads OBD-II from the car, draws the numbers live, logs the trips.
+OBD-II telemetry for cars. An ELM327 adapter talks over USB, Bluetooth SPP or RJ45, a Python
+sidecar turns it into JSON-RPC, and an Electron window draws it.
 
-`Electron` `Vue 3` `TypeScript` `PixiJS` `Rust/NAPI-RS` `SQLite`
+*Works now:* live gauges and history charts, drag-and-drop dashboard with presets and
+import/export, DTC read/clear, VIN, zh/en, dark and light, and a drive simulator so you can develop
+without a car. Current build is `0.1.9-rc.3`, desktop first.
 
-</td><td width="40%">
+*Still open:* nobody has left it plugged into a real car for six hours yet. PID refresh rate is
+capped by whatever the adapter can push, not by the app. The Android build shares the renderer but
+lags the desktop one.
 
-**[SPlayer-Next](https://github.com/K-Blaaaack/SPlayer-Next)** — 🎵 *public project*
+`Electron` `Vue 3` `TypeScript` `Python sidecar` `SQLite`
 
-A music player I wanted on Linux, with more than one place to pull tracks from.
+</td><td width="50%">
 
-`Vue` `Electron` `TypeScript`
+**Hyps Hub** — 🎮 [source](https://github.com/K-Blaaaack/Hyps-Hub)
+
+A Qt 6 / QML desktop client for [Hyps](https://github.com/MoYingJi/Hyps), the command-line tool I
+use to lift frame-rate caps in games on Linux. The CLI stays the source of truth; the GUI is an
+adapter around it.
+
+*Works now:* first-run wizard that clones its own Hyps copy, runtime isolated under XDG dirs so it
+never touches `~/Hyps`, environment checks parsed from the upstream report, per-game config forms,
+launch with live stdout and process-group cancel, config editing with validation and timestamped
+backups, task history, redacted diagnostics export, CI and release workflows.
+
+*Still open:* Linux only. Upstream changes its config contract every few releases and I have to
+keep following it.
+
+`C++` `Qt 6 / QML` `CMake` `GitHub Actions`
 
 </td></tr>
-<tr><td width="60%">
+<tr><td width="50%">
 
-**[Hyps](https://github.com/MoYingJi/Hyps) / Hyps Hub** — 🎮 *daily driver*
+**oxygen-linux** — 📱 *local repo, not published yet*
 
-A CLI that lifts frame-rate caps in games on Linux (Genshin, ZZZ). **Hyps Hub** is the GUI I wrote
-around it later, in Qt6/QML. It talks to the CLI through an adapter layer so the two can move
-independently, which has already saved me from rewriting things twice.
+Mainline Linux on a Xiaomi Mi 6X (msm8953). Started as a weekend experiment; it boots.
 
-`C` `Bash` `Qt6/QML`
+*Works now:* kernel 7.3 with a 263-file msm8953 patch set forward-ported, KWin on Wayland, the
+1080p DSI panel, ft5x06 touch, Wi-Fi on 5 GHz, Bluetooth, USB gadget networking and serial, and
+Adreno 506 through freedreno. glmark2 reaches 120 fps with vsync off, which mostly proved the
+bottleneck is frame scheduling, not the GPU.
 
-</td><td width="40%">
+*Partial:* audio (the amp driver isn't ported, so the speaker is silent), charging (battery
+gauge never shows up), sensors.
 
-**[KBkernel-cachy](https://github.com/K-Blaaaack/KBkernel-cachy)** — 🧬 *system*
+*Not started:* camera, modem/SIM, hardware video decode.
 
-CachyOS-based kernels I build for my own laptops, tuned per machine. The T480 gets most of the attention.
+`Linux Kernel` `device tree` `clang/LLD` `fastboot` `Arch Linux ARM`
 
-`Linux Kernel` `GCC` `Pacman/AUR`
+</td><td width="50%">
 
-</td></tr>
-<tr><td width="60%">
+**KBkernel-cachy** — 🧬 [source](https://github.com/K-Blaaaack/KBkernel-cachy)
 
-**MAGI Decision System** — 🤖 *experimental*
+Kernel recipes and builds, not a fork with a commit history. CachyOS base, BORE scheduler,
+ThinLTO, x86-64-v3.
 
-Stolen straight from *Evangelion*. Three agents look at a proposal separately and in parallel.
-All three have to agree. If one refuses, the system is supposed to draft a compromise and send it
-back around. Whether that actually converges is the open question I'm still poking at.
+*Works now:* every release ships the package and the recipe it came from, with source hashes
+pinned in `SOURCES.md`. The T480 and one other machine boot these daily.
 
-`Python` `LLM agents`
+*Still open:* no binary repo, no automated test beyond "it boots and I keep using it".
 
-</td><td width="40%">
-
-**[articles](https://github.com/K-Blaaaack/articles) + [my-homepage](https://github.com/K-Blaaaack/my-homepage)** — 📝 *live*
-
-[k-black.top](https://k-black.top) and the content behind it. Own build pipeline, light and dark
-themes, English and Chinese.
-
-`Node.js` `Vite` `CI`
+`Linux Kernel` `clang/LLD` `makepkg` `AUR`
 
 </td></tr>
 </table>
 
-<details>
-<summary><b>🧰 Workshop shelf (smaller stuff)</b></summary>
-<br/>
+---
 
-| Project | What it does |
+### 🧠 MAGI Decision System — *local, runs as a DSH plugin*
+
+Borrowed straight from *Evangelion*, then turned into something duller and more useful: a gate in
+front of risky tool calls. Three reviewers look at the same proposal separately, with **different
+information slices** rather than different personalities. All three have to approve, and approval
+produces a single-use ticket bound to one effect set, valid 60 seconds.
+
+*Works now:* pre-execute hook in the tool pipeline (not a prompt, so it can't be talked around),
+risk tiering, parallel review, arbitration, monotonic guard on the effect set, JSONL audit log with
+sensitive fields redacted, plus tests and two written reports.
+
+*Honest limitation:* all three reviewers run on the same model by default. Information slicing
+lowers correlation, it doesn't remove it. Real independence needs a different model or a rule
+engine behind BALTHASAR, and that's a config option right now, not a finished feature.
+
+---
+
+### 🔧 Workshop
+
+Smaller things, forks, and one-off fixes. Fork status is marked so you know what I actually wrote.
+
+| Project | What it is |
 | --- | --- |
-| [oxygen-linux] | Getting mainline Linux to boot on an msm8953 phone. Kernel 7.x, device tree, touch and panel drivers |
+| [r730-fanctl](https://github.com/K-Blaaaack/r730-fanctl) | IPMI fan control for a Dell R730, percentage-based curves, English and Chinese output |
+| [Xiaomi-10-Ultra-touch-flip-patch](https://github.com/K-Blaaaack/Xiaomi-10-Ultra-touch-flip-patch) | Fixes inverted touch after panel swaps on that phone |
+| [magisk-touch-invert-for-xiaomi-10-ultra](https://github.com/K-Blaaaack/magisk-touch-invert-for-xiaomi-10-ultra) | Same fix, packaged as a Magisk module |
+| [mkdtboimg](https://github.com/K-Blaaaack/mkdtboimg) | Build DTBO images, mirrored because the AOSP script is hard to find |
+| [ESP32-Bluetooth-Music-Controller](https://github.com/K-Blaaaack/ESP32-Bluetooth-Music-Controller) | Hardware media keys over BLE |
+| [ESP32-Buzzer-Haruhikage](https://github.com/K-Blaaaack/ESP32-Buzzer-Haruhikage) | A buzzer that plays 春日影. It was a dare |
+| [SPlayer-Next](https://github.com/K-Blaaaack/SPlayer-Next) | *Fork.* Music player with lyric support; I keep a build for my own machine |
+| [Hyps](https://github.com/MoYingJi/Hyps) | *Not mine.* The CLI Hyps Hub wraps. Frame-rate unlocking scripts |
 | local_pxe_system | PXE in Docker. `pxe up`, then a machine installs itself |
-| astrbot_plugin_announcement | AstrBot plugin with a web dashboard for managing announcements. I wrote it in one evening with agents |
-| Monster-Siren downloader | Pulls the Arknights soundtrack down locally |
-| bili tooling | Small scripts that automate bits of Bilibili |
+| astrbot_plugin_announcement | AstrBot plugin with a web dashboard. Written in an evening with agents |
+| TWRP device trees (CS611, MT6739) | Recovery trees for cheap phones, mostly forks of builder actions |
 
-</details>
+---
 
-<br/>
+### 🛠️ Stack, sorted by how often I actually touch it
 
-## 📊 GitHub Analytics
+No proficiency percentages. Tiers are about frequency and depth, and the last row is things I read
+about more than I write.
+
+| Tier | What's in it |
+| --- | --- |
+| **Daily** | Arch Linux, Wayland (KWin, `niri` on the side), bash, TypeScript, Vue 3, Electron, Git |
+| **Regularly** | Python, C++ with Qt 6 / QML, CMake, systemd and udev, pacman and AUR packaging, Docker, Proxmox VE, QEMU/KVM, SQLite |
+| **Per project** | Rust, C, kernel tooling (clang/LLD, `dtc`, `mkbootimg`), Gradle and Android, ESP-IDF, `ipmitool` |
+| **Read more than write** | OpenWrt, OpenVPN, PXE boot chains, Wine and Proton internals, DPU and DRM internals |
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=ts,js,python,rust,bash,c,cpp,vue,electron,vite,pinia,nodejs,sqlite,arch,linux,git,cmake,gradle,githubactions,neovim" />
+
+</div>
+
+---
+
+### ✍️ Writing
+
+I write up the messy parts on [k-black.top](https://k-black.top), source in
+[articles](https://github.com/K-Blaaaack/articles). Mostly build logs: the msm8953 kernel port,
+custom CachyOS kernels, the R730 fan curve, the Hyps Hub design, this site's own rebuilds.
+
+---
+
+### 📊 GitHub Analytics
 
 <div align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=K-Blaaaack&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&ring_color=1f6feb" />
@@ -133,77 +199,18 @@ themes, English and Chinese.
 
 <br/>
 
-## 🛠️ Arsenal
+### 🐧 Currently Wrenching On
 
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=ts,js,python,rust,bash,c,cpp,qml&theme=dark" /><br/>
-<img src="https://skillicons.dev/icons?i=vue,electron,vite,pinia,nodejs,sqlite&theme=dark" /><br/>
-<img src="https://skillicons.dev/icons?i=arch,linux,kubernetes,docker,nginx,git&theme=dark" /><br/>
-<img src="https://skillicons.dev/icons?i=gradle,githubactions,vscode,neovim,idea,raspberrypi&theme=dark" />
-
-</div>
-
-<table>
-<tr><th>Domain</th><th>Tooling</th></tr>
-<tr><td><b>🐧 Systems</b></td><td>Arch Linux · Linux Kernel · Wayland / <code>niri</code> · systemd / udev · Android · Device Tree · Magisk · Wine / Proton / Waydroid</td></tr>
-<tr><td><b>🌐 Infra</b></td><td>Proxmox VE · KVM/QEMU · Docker · PXE · OpenWrt · iKuai · OpenVPN · NAS · 10/40GbE fabric</td></tr>
-<tr><td><b>🤖 AI</b></td><td>Local LLM inference · OpenCode / DSH agent harnesses · AstrBot · multi-agent orchestration</td></tr>
-</table>
-
-<br/>
-
-### 🛠️ Tech Stack
-
-<table>
-<tr><th width="25%">Languages</th><th width="25%">App & Desktop</th><th width="25%">Systems</th><th width="25%">Infra & AI</th></tr>
-<tr><td>
-
-TypeScript · JavaScript
-Python · Rust
-Bash · C / C++
-QML
-
-</td><td>
-
-Vue 3 · Pinia · UnoCSS
-Electron · Vite · Capacitor
-Qt6/QML · PixiJS
-Node.js · Hono · WebSocket
-SQLite · NAPI-RS
-
-</td><td>
-
-Arch Linux · Linux Kernel
-Wayland · niri · systemd · udev
-Android · Device Tree · Magisk
-Wine · Proton · Waydroid
-
-</td><td>
-
-Proxmox VE · KVM/QEMU · Docker
-OpenWrt · iKuai · OpenVPN
-PXE · NAS · Self-hosting · 10/40GbE
-OpenCode · AstrBot · Local LLMs
-Multi-agent systems
-
-</td></tr>
-</table>
-
-<br/>
-
-## 🐧 Currently Wrenching On
-
-- Getting the display and touch panel alive on an old Snapdragon 625 phone (oxygen-linux). Neither works yet
-- Figuring out whether three agents disagreeing can ever produce a better answer than one agent deciding (MAGI)
+- Getting the amp driver and battery gauge working on the Mi 6X port, so it stops being a phone that only browses
+- Checking whether three reviewers disagreeing ever beats one reviewer deciding, and logging what happens when they do
 - Making command-line tools usable without a terminal, without making them slower
 - Rebuilding the homelab around PXE, so reinstalling a box stops being an afternoon
 
 ---
 
-### 🐧 Beyond the Terminal
+### Beyond the Terminal
 
-Homelab architecture · Android flashing & rooting · Minecraft servers ·
+Homelab architecture · Android flashing and rooting · Minecraft servers ·
 anime & 二次元 · performance tuning · hardware DIY
 
 ---
