@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=560&lines=Hi%2C+I'm+K-Black+%F0%9F%91%8B;Linux+%C2%B7+Open+Source+%C2%B7+Systems;from+Arch+Linux%2C+with+curiosity" alt="typing" />
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=20&duration=2800&pause=800&color=58A6FF&center=true&vCenter=true&width=720&lines=Hi%2C+I%27m+K-Black+%F0%9F%91%8B;%24+whoami;%E2%86%92+cross-platform+app+developer+%7C+kernel+tinkerer;%E2%86%92+homelab+architect+%7C+AI+agent+builder;%E2%86%92+%22Understand+the+system.+Build+useful+tools.%22)](https://git.io/typing-svg)
 
 **Linux & Open Source Developer** — building cross-platform apps, porting mainline kernels,
 and wiring self-hosted infrastructure together with AI agents.
@@ -17,7 +17,7 @@ and wiring self-hosted infrastructure together with AI agents.
 
 </div>
 
----
+<br/>
 
 ### 👨‍💻 About Me
 
@@ -98,17 +98,59 @@ custom build pipeline, dark/light themes, i18n.
 </table>
 
 <details>
-<summary><b>🧰 More tinkering</b></summary>
+<summary><b>🧰 Workshop shelf — smaller experiments</b></summary>
+<br/>
 
-- **oxygen-linux** — mainline Linux bring-up for an msm8953 Android device (kernel 7.x, device tree, drivers)
-- **local_pxe_system** — Dockerized PXE provisioning server for the homelab (`pxe up` and go)
-- **astrbot_plugin_announcement** — AstrBot plugin with a full web management dashboard (i18n, multi-agent built)
-- **Monster-Siren downloader & B站 tooling** — small utilities for music and content workflows
-- **Wine / Proton / Waydroid** — gaming-on-Linux compatibility and performance work
+| Project | What it does |
+| --- | --- |
+| [oxygen-linux] | Mainline Linux bring-up for an msm8953 Android handset — kernel 7.x, device tree, touch & display drivers |
+| local_pxe_system | Dockerized PXE provisioning for the homelab — `pxe up` and machines install themselves |
+| astrbot_plugin_announcement | AstrBot plugin with a full web management dashboard (i18n, theme-aware, agent-built) |
+| Monster-Siren downloader | Music library tooling for Arknights fans |
+| bili tooling | Bilibili content & workflow automation |
 
 </details>
 
----
+<br/>
+
+## 📊 GitHub Analytics
+
+<div align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=K-Blaaaack&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&ring_color=1f6feb" />
+  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=K-Blaaaack&theme=github-dark-blue&hide_border=true&background=0D1117&ring=1F6FEB&fire=58A6FF&currStreakLabel=58A6FF" />
+  <br/>
+  <img width="370" src="https://github-readme-stats.vercel.app/api/top-langs/?username=K-Blaaaack&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8" />
+  <img width="370" src="https://github-profile-trophy.vercel.app/?username=K-Blaaaack&theme=github_dark&no-frame=true&no-bg=true&column=7&margin-w=4&margin-h=4" />
+  <br/><br/>
+  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=K-Blaaaack&bg_color=0d1117&color=c9d1d9&line=1f6feb&point=58a6ff&area=true&hide_border=true&theme=github-dark" />
+  <br/><br/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/K-Blaaaack/K-Blaaaack/output/github-contribution-grid-snake-dark.svg" />
+    <img width="95%" alt="snake animation" src="https://raw.githubusercontent.com/K-Blaaaack/K-Blaaaack/output/github-contribution-grid-snake.svg" />
+  </picture>
+</div>
+
+<br/>
+
+## 🛠️ Arsenal
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=ts,js,python,rust,bash,c,cpp,qml&theme=dark" /><br/>
+<img src="https://skillicons.dev/icons?i=vue,electron,vite,pinia,nodejs,sqlite&theme=dark" /><br/>
+<img src="https://skillicons.dev/icons?i=arch,linux,kubernetes,docker,nginx,git&theme=dark" /><br/>
+<img src="https://skillicons.dev/icons?i=gradle,githubactions,vscode,neovim,idea,raspberrypi&theme=dark" />
+
+</div>
+
+<table>
+<tr><th>Domain</th><th>Tooling</th></tr>
+<tr><td><b>🐧 Systems</b></td><td>Arch Linux · Linux Kernel · Wayland / <code>niri</code> · systemd / udev · Android · Device Tree · Magisk · Wine / Proton / Waydroid</td></tr>
+<tr><td><b>🌐 Infra</b></td><td>Proxmox VE · KVM/QEMU · Docker · PXE · OpenWrt · iKuai · OpenVPN · NAS · 10/40GbE fabric</td></tr>
+<tr><td><b>🤖 AI</b></td><td>Local LLM inference · OpenCode / DSH agent harnesses · AstrBot · multi-agent orchestration · workflow automation</td></tr>
+</table>
+
+<br/>
 
 ### 🛠️ Tech Stack
 
@@ -147,6 +189,15 @@ Multi-agent systems
 </td></tr>
 </table>
 
+<br/>
+
+## 🐧 Currently Wrenching On
+
+- Porting **mainline Linux** onto Android hardware (oxygen-linux) — display & touch bring-up
+- Rethinking **multi-agent decision pipelines** (MAGI) — parallel deliberation, risk review, compromise rounds
+- Shrinking the gap between **CLI power and GUI comfort** on the Linux desktop
+- Feeding the homelab: PXE, high-speed switching, and one dashboard to rule them all
+
 ---
 
 ### 🐧 Beyond the Terminal
@@ -158,10 +209,25 @@ anime & 二次元 · performance tuning · hardware DIY
 
 <div align="center">
 
-**"Understand the system. Build useful tools. Keep experimenting."**
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2" width="70%"/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=K-Blaaaack&theme=dracula&hide_title=true" width="90%" alt="activity" />
+### 💭 Philosophy
 
-*Powered by Linux, curiosity, and a lot of terminal sessions.*
+> **Understand the system. Build useful tools. Keep experimenting.**
+
+*Learning by building, documenting what breaks, shipping what works.*
+
+<br/>
+
+![Anime](https://img.shields.io/badge/-anime-ff69b4?style=flat-square&logo=sailpoint&logoColor=white)
+![Minecraft](https://img.shields.io/badge/-Minecraft-62B47A?style=flat-square&logo=minecraft&logoColor=white)
+![Homelab](https://img.shields.io/badge/-Homelab-1f6feb?style=flat-square&logo=proxmox&logoColor=white)
+![Tinkering](https://img.shields.io/badge/-%E6%8A%98%E8%85%BE-58a6ff?style=flat-square)
+
+<br/>
+
+*Powered by Linux, curiosity, and an unreasonable number of terminal sessions.*
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:58a6ff,50:1f6feb,100:0d1117&height=120&section=footer" width="100%" />
 
 </div>
