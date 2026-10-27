@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f6feb,100:58a6ff&height=180&section=header&text=K-Black&fontSize=60&fontColor=ffffff&fontAlignY=32&desc=Linux%20%C2%B7%20Open%20Source%20%C2%B7%20Systems%20Engineering&descAlignY=55&descSize=18&animation=fadeIn" width="100%" />
+
 [![Typing SVG](https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=20&duration=2800&pause=800&color=58A6FF&center=true&vCenter=true&width=720&lines=Hi%2C+I%27m+K-Black+%F0%9F%91%8B;%24+whoami;%E2%86%92+cross-platform+app+developer+%7C+kernel+tinkerer;%E2%86%92+homelab+architect+%7C+AI+agent+builder;%E2%86%92+%22Understand+the+system.+Build+useful+tools.%22)](https://git.io/typing-svg)
 
 **Linux & Open Source Developer** — building cross-platform apps, porting mainline kernels,
